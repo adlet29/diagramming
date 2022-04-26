@@ -34,17 +34,10 @@
                 <a href="{{ url('/teacher/labs') }}"><span class="fa fa-support mr-3"></span> Лаборатории </a>
             </li>
             <li>
-                <a href="#"><span class="fa fa-download mr-3 notif"><small
-                            class="d-flex align-items-center justify-content-center">5</small></span> <del>Download</del></a>
+                <a href="#"><span class="fa fa-address-card-o mr-3"></span> Регистрация задание </a>
             </li>
             <li>
-                <a href="#"><span class="fa fa-gift mr-3"></span> <del>Gift Code</del></a>
-            </li>
-            <li>
-                <a href="#"><span class="fa fa-trophy mr-3"></span> <del>Top Review</del></a>
-            </li>
-            <li>
-                <a href="#"><span class="fa fa-cog mr-3"></span> <del>Settings</del></a>
+                <a href="#"><span class="fa fa-file mr-3"></span> Отчет </a>
             </li>
             <li>
                 <a href="{{ route('logout') }}"

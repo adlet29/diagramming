@@ -60,11 +60,14 @@ App.config = App.config || {};
                 type: 'button',
                 name: '',
                 group: 'clear',
-                text: 'save',
+                text: 'Сохранить',
                 attrs: {
+                    //data-toggle="modal" data-target="#exampleModal"
                     button: {
                         id: 'save-paper',
-                        'data-tooltip': 'Save Paper',
+                        'data-toggle': 'modal',
+                        'data-target': '#exampleModal',
+                        'data-tooltip': 'Сохранить виртуальную лабараторию',
                         'data-tooltip-position': 'top',
                         'data-tooltip-position-selector': '.toolbar-container'
                     }

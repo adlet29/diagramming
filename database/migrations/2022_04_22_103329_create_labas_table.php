@@ -15,10 +15,11 @@ class CreateLabasTable extends Migration
     {
         Schema::create('labas', function (Blueprint $table) {
             $table->id();
-            $table->integer('subject_id');
+            $table->integer('user_id');
             $table->string('name');
-            $table->text('description');
-            $table->string('link');
+            $table->text('description')->nullable();
+            $table->longText('json');
+            $table->timestamps();
         });
     }
 

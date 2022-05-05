@@ -17,9 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('sink/sink', function () {
-    return view('plank.main');
-});
+Route::get('sink/{laba_id}', [App\Http\Controllers\PlankController::class, 'index']);
 
 Route::post('paper/save', [App\Http\Controllers\LabaController::class, 'create']);
 
@@ -37,7 +35,7 @@ Route::group([
         Route::get('/', [App\Http\Controllers\TeacherController::class, 'index'])->name('Преподователь');
         Route::get('/plank', [App\Http\Controllers\LabaController::class, 'plank'])->name('Преподователь');
         Route::get('/labas', [App\Http\Controllers\LabaController::class, 'index'])->name('Преподователь');
-        Route::get('/labs/{id}', [App\Http\Controllers\LabaController::class, 'show'])->name('Преподователь');
+        Route::get('/labas/{id}', [App\Http\Controllers\LabaController::class, 'show'])->name('Преподователь');
     });
 
     Route::group([

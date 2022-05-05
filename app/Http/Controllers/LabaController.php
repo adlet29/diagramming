@@ -83,8 +83,8 @@ class LabaController extends Controller
      */
     public function show($laba_id)
     {
-        $laba = laba::where('id', $laba_id)->get()[0];
-        return view('teacher.labs.show', ['laba' => $laba]);
+
+        return view('plank.index', ['id' => $laba_id]);
     }
 
     /**

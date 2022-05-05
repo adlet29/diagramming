@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Application</title>
-    <link rel="icon" href="/teacher/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/sink/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="/build/package/rappid.css">
-    <link rel="stylesheet" type="text/css" href="/teacher/css/style.css">
-    <link rel="stylesheet" type="text/css" href="/teacher/css/theme-picker.css">
+    <link rel="stylesheet" type="text/css" href="/sink/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/sink/css/theme-picker.css">
 
     <!-- theme-specific application CSS  -->
-    <link rel="stylesheet" type="text/css" href="/teacher/css/style.dark.css">
-    <link rel="stylesheet" type="text/css" href="/teacher/css/style.material.css">
-    <link rel="stylesheet" type="text/css" href="/teacher/css/style.modern.css">
+    <link rel="stylesheet" type="text/css" href="/sink/css/style.dark.css">
+    <link rel="stylesheet" type="text/css" href="/sink/css/style.material.css">
+    <link rel="stylesheet" type="text/css" href="/sink/css/style.modern.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -50,24 +50,27 @@
 <![endif]-->
 
 <!-- Application files:  -->
-<script src="/teacher/js/config/halo.js"></script>
-<script src="/teacher/js/config/selection.js"></script>
-<script src="/teacher/js/config/inspector.js"></script>
-<script src="/teacher/js/config/stencil.js"></script>
-<script src="/teacher/js/config/toolbar.js"></script>
-<script src="/teacher/js/config/sample-graphs.js"></script>
-<script src="/teacher/js/views/main.js"></script>
-<script src="/teacher/js/views/theme-picker.js"></script>
-<script src="/teacher/js/models/joint.shapes.app.js"></script>
-<script src="/teacher/js/views/navigator.js"></script>
+<script src="/sink/js/config/halo.js"></script>
+<script src="/sink/js/config/selection.js"></script>
+<script src="/sink/js/config/inspector.js"></script>
+<script src="/sink/js/config/stencil.js"></script>
+<script src="/sink/js/config/toolbar.js"></script>
+<script src="/sink/js/config/sample-graphs.js"></script>
+<script src="/sink/js/views/main.js"></script>
+<script src="/sink/js/views/theme-picker.js"></script>
+<script src="/sink/js/models/joint.shapes.app.js"></script>
+<script src="/sink/js/views/navigator.js"></script>
 
 <script>
     joint.setTheme('dark');
     app = new App.MainView({ el: '#app' });
     themePicker = new App.ThemePicker({ mainView: app });
     themePicker.render().$el.appendTo(document.body);
+
     window.addEventListener('load', function() {
-        app.graph.fromJSON(JSON.parse(App.config.sampleGraphs.emergencyProcedure));
+        @php
+            echo "app.graph.fromJSON($graph);";
+        @endphp
     });
 
 </script>

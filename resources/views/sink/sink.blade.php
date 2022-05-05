@@ -19,6 +19,7 @@
     <div class="app-header">
         <div class="app-title">
             <h1>Платформа</h1>
+            <button class="btn btn-primary">save</button>
         </div>
         <div class="toolbar-container"></div>
     </div>
@@ -66,6 +67,12 @@
     window.addEventListener('load', function() {
         app.graph.fromJSON(JSON.parse(App.config.sampleGraphs.emergencyProcedure));
     });
+
+    $(document).on('click', '#save-paper', function(event) {
+        var json = JSON.stringify(app.graph);
+        console.log(json)
+    });
+
 </script>
 
 <!-- Local file warning: -->

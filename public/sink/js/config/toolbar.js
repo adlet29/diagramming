@@ -58,6 +58,20 @@ App.config = App.config || {};
             },
             {
                 type: 'button',
+                name: '',
+                group: 'clear',
+                text: 'save',
+                attrs: {
+                    button: {
+                        id: 'save-paper',
+                        'data-tooltip': 'Save Paper',
+                        'data-tooltip-position': 'top',
+                        'data-tooltip-position-selector': '.toolbar-container'
+                    }
+                }
+            },
+            {
+                type: 'button',
                 name: 'clear',
                 group: 'clear',
                 attrs: {

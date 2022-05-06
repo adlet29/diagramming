@@ -32,10 +32,12 @@ Route::group([
     Route::group([
         'prefix' => 'teacher'
     ], function() {
-        Route::get('/', [App\Http\Controllers\TeacherController::class, 'index'])->name('Преподователь');
-        Route::get('/plank', [App\Http\Controllers\LabaController::class, 'plank'])->name('Преподователь');
-        Route::get('/labas', [App\Http\Controllers\LabaController::class, 'index'])->name('Преподователь');
-        Route::get('/labas/{id}', [App\Http\Controllers\LabaController::class, 'show'])->name('Преподователь');
+        Route::get('/', [App\Http\Controllers\TeacherController::class, 'index']);
+        Route::get('/plank', [App\Http\Controllers\LabaController::class, 'plank']);
+        Route::get('/labas', [App\Http\Controllers\LabaController::class, 'index']);
+        Route::get('/labas/{id}', [App\Http\Controllers\LabaController::class, 'show']);
+        Route::get('/tasks', [App\Http\Controllers\TaskController::class, 'index']);
+        Route::post('/task/create', [App\Http\Controllers\TaskController::class, 'create']);
     });
 
     Route::group([

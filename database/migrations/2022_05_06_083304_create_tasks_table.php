@@ -18,8 +18,8 @@ class CreateTasksTable extends Migration
             $table->integer('teacher_id');
             $table->integer('student_id');
             $table->integer('laba_id');
+            $table->integer('parent_id')->nullable();
             $table->string('status');
-            $table->string('direction');
             $table->integer('point')->nullable();
             $table->date('deadline');
             $table->timestamps();

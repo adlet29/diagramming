@@ -17,9 +17,35 @@ class TaskController extends Controller
      */
     public function index()
     {
+        # select
         $labas = laba::where('user_id', Auth::user()->id)->get();
         $students = User::where('role_id', 2)->get();
-        return view('teacher.tasks', ['labas' => $labas, 'students' => $students]);
+        # end select
+
+        # table
+        $tasks = Task::where('teacher_id', Auth::user()->id)->get();
+
+        foreach ($tasks as $k => $task) {
+            $tasks[$k]['student_fio'] = '';
+            foreach ($students as $student) {
+                if ($task['student_id'] == $student['id']) {
+                    $tasks[$k]['student_fio'] = $student['name'];
+                }
+            }
+            $tasks[$k]['laba_name'] = '';
+            foreach ($labas as $laba) {
+                if ($task['laba_id'] == $laba['id']) {
+                    $tasks[$k]['laba_name'] = $laba['name'];
+                }
+            }
+
+        }
+        # end table
+        return view('teacher.tasks', [
+            'labas' => $labas,
+            'students' => $students,
+            'tasks' => $tasks
+        ]);
     }
 
     /**
@@ -34,8 +60,8 @@ class TaskController extends Controller
                 'teacher_id' => Auth::user()->id,
                 'student_id'=> $request->student_id,
                 'laba_id' => $request->laba_id,
+                'parent_id' => null,
                 'status' => 'open',
-                'direction' => 'student',
                 'point' => null,
                 'deadline' => date("Y-m-d", strtotime($request->date))
             ]);

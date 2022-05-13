@@ -1,7 +1,8 @@
 @extends('layouts.main')
 
 @section('content')
-    <h2>Виртуальная сцена</h2>
+    <h2>{{ $name }}</h2>
+    <p>{{ $description }}</p>
     @php
         if (!isset($id)) {
             $id = 0;

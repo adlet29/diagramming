@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\laba;
+use App\Models\Task;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -17,7 +18,10 @@ class LabaController extends Controller
      */
     public function plank()
     {
-        return view('plank.index');
+        return view('plank.index', [
+            'name' => 'Виртуальная сцена',
+            'description' => ''
+        ]);
     }
 
     /**
@@ -58,6 +62,12 @@ class LabaController extends Controller
 
          $laba_id = laba::create($data)->id;
          if ($laba_id > 0) {
+             if (isset($request->task_id)) {
+                 $task = Task::find((int)$request->task_id);
+                 $task->parent_id = $laba_id;
+                 $task->status = 'done';
+                 $task->save();
+             }
              return response()->json(['success' => true, 'message' => 'Успех']);
          }
 
@@ -81,10 +91,27 @@ class LabaController extends Controller
      * @param  \App\Models\laba  $laba
      * @return \Illuminate\Http\Response
      */
-    public function show($laba_id)
+    public function show(Request $request)
+    {
+        $laba = laba::where('id', $request->laba_id)->get()[0];
+        $name = $laba['name'];
+        $description = $laba['description'];
+
+        return view('plank.index', [
+            'id' => $request->laba_id,
+            'name' => $name,
+            'description' => $description
+        ]);
+    }
+
+
+    public function show_v2(Request $request)
     {
 
-        return view('plank.index', ['id' => $laba_id]);
+        return view('plank.student', [
+            'id' => $request->laba_id,
+            'task_id' => $request->task_id
+        ]);
     }
 
     /**

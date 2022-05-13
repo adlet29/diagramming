@@ -26,20 +26,27 @@
             </div>
         </div>
         <ul class="list-unstyled components mb-5">
+            @if(\Illuminate\Support\Facades\Auth::user()->role_id == 1)
+                <li class="active">
+                    <a href="{{ url('/teacher') }}"><span class="fa fa-home mr-3"></span> Мои Студенты </a>
+                </li>
+                <li>
+                    <a href="{{ url('/teacher/plank') }}"><span class="fa fa-support mr-3"></span> Вируальная сцена </a>
+                </li>
+                <li>
+                    <a href="{{ url('/teacher/labas') }}"><span class="fa fa-support mr-3"></span> Мои Лаборатории </a>
+                </li>
+                <li>
+                    <a href="{{ url('/teacher/tasks') }}"><span class="fa fa-address-card-o mr-3"></span> Регистрация задание </a>
+                </li>
+                <li>
+                    <a href="#"><span class="fa fa-file mr-3"></span> Отчет </a>
+                </li>
+            @else
+
+            @endif
             <li class="active">
-                <a href="{{ url('/teacher') }}"><span class="fa fa-home mr-3"></span> Мои Студенты </a>
-            </li>
-            <li>
-                <a href="{{ url('/teacher/plank') }}"><span class="fa fa-support mr-3"></span> Вируальная сцена </a>
-            </li>
-            <li>
-                <a href="{{ url('/teacher/labas') }}"><span class="fa fa-support mr-3"></span> Мои Лаборатории </a>
-            </li>
-            <li>
-                <a href="{{ url('/teacher/tasks') }}"><span class="fa fa-address-card-o mr-3"></span> Регистрация задание </a>
-            </li>
-            <li>
-                <a href="#"><span class="fa fa-file mr-3"></span> Отчет </a>
+                <a href="{{ url('/student') }}"><span class="fa fa-home mr-3"></span> Задачи </a>
             </li>
             <li>
                 <a href="{{ route('logout') }}"
@@ -71,7 +78,7 @@
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="/jquery/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 

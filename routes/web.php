@@ -44,5 +44,6 @@ Route::group([
         'prefix' => 'student'
     ], function() {
         Route::get('/', [App\Http\Controllers\StudentController::class, 'index'])->name('Студент');
+        Route::get('/task/{task_id}/laba/{laba_id}', [App\Http\Controllers\PlankController::class, 'index_v2'])->name('Студент');
     });
 });

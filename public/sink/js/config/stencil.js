@@ -2,7 +2,7 @@
 
 Copyright (c) 2022 client IO
 
- 2022-04-25 
+ 2022-04-25
 
 
 This Source Code Form is subject to the terms of the JointJS+ Trial License
@@ -24,9 +24,9 @@ App.config = App.config || {};
         standard: { index: 1, label: 'Standard shapes' },
         fsa: { index: 2, label: 'State machine' },
         pn: { index: 3, label: 'Petri nets' },
-        erd: { index: 4, label: 'Entity-relationship' },
-        uml: { index: 5, label: 'UML' },
-        org: { index: 6, label: 'ORG' }
+        erd: { index: 4, label: 'Entity-relationship' }
+        // uml: { index: 5, label: 'UML' },
+        // org: { index: 6, label: 'ORG' }
     };
 
     App.config.stencil.shapes = {};
@@ -223,7 +223,7 @@ App.config = App.config || {};
                     dataTooltipPositionSelector: '.joint-stencil'
                 },
                 image: {
-                    xlinkHref: 'assets/image-icon1.svg'
+                    xlinkHref: '/sink/assets/image-icon1.svg'
                 },
                 body: {
                     fill: 'transparent',
@@ -256,7 +256,7 @@ App.config = App.config || {};
                     strokeDasharray: '0'
                 },
                 image: {
-                    xlinkHref: 'assets/image-icon1.svg'
+                    xlinkHref: '/sink/assets/image-icon1.svg'
                 },
                 label: {
                     text: 'card',
@@ -286,7 +286,7 @@ App.config = App.config || {};
                     fill: 'transparent'
                 },
                 image: {
-                    xlinkHref: 'assets/image-icon1.svg'
+                    xlinkHref: '/sink/assets/image-icon1.svg'
                 },
                 label: {
                     text: 'icon',

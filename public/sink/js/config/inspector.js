@@ -2,7 +2,7 @@
 
 Copyright (c) 2022 client IO
 
- 2022-04-25 
+ 2022-04-25
 
 
 This Source Code Form is subject to the terms of the JointJS+ Trial License
@@ -21,7 +21,7 @@ App.config = App.config || {};
     var options = {
 
         colorPalette: [
-            { content: 'transparent', icon: 'assets/transparent-icon.svg' },
+            { content: 'transparent', icon: '/sink/assets/transparent-icon.svg' },
             { content: '#f6f6f6' },
             { content: '#dcd7d7' },
             { content: '#8f8f8f' },
@@ -40,7 +40,7 @@ App.config = App.config || {};
         ],
 
         colorPaletteReset: [
-            { content: undefined, icon: 'assets/no-color-icon.svg' },
+            { content: undefined, icon: '/sink/assets/no-color-icon.svg' },
             { content: '#f6f6f6' },
             { content: '#dcd7d7' },
             { content: '#8f8f8f' },
@@ -96,15 +96,15 @@ App.config = App.config || {};
         ],
 
         imageIcons: [
-            { value: 'assets/image-icon1.svg', content: '<img height="42px" src="assets/image-icon1.svg"/>' },
-            { value: 'assets/image-icon2.svg', content: '<img height="80px" src="assets/image-icon2.svg"/>' },
-            { value: 'assets/image-icon3.svg', content: '<img height="80px" src="assets/image-icon3.svg"/>' },
-            { value: 'assets/image-icon4.svg', content: '<img height="80px" src="assets/image-icon4.svg"/>' }
+            { value: '/sink/assets/image-icon1.svg', content: '<img height="42px" src="/sink/assets/image-icon1.svg"/>' },
+            { value: '/sink/assets/image-icon2.svg', content: '<img height="80px" src="/sink/assets/image-icon2.svg"/>' },
+            { value: '/sink/assets/image-icon3.svg', content: '<img height="80px" src="/sink/assets/image-icon3.svg"/>' },
+            { value: '/sink/assets/image-icon4.svg', content: '<img height="80px" src="/sink/assets/image-icon4.svg"/>' }
         ],
 
         imageGender: [
-            { value: 'assets/member-male.png', content: '<img height="50px" src="assets/member-male.png" style="margin: 5px 0 0 2px;"/>' },
-            { value: 'assets/member-female.png', content: '<img height="50px" src="assets/member-female.png" style="margin: 5px 0 0 2px;"/>' }
+            { value: '/sink/assets/member-male.png', content: '<img height="50px" src="/sink/assets/member-male.png" style="margin: 5px 0 0 2px;"/>' },
+            { value: '/sink/assets/member-female.png', content: '<img height="50px" src="/sink/assets/member-female.png" style="margin: 5px 0 0 2px;"/>' }
         ],
 
         arrowheadSize: [

@@ -2,12 +2,12 @@
 
 @section('content')
     <h2>Лабаратории</h2>
-    <table class="table">
+    <table class="table table-striped table-dark">
         <thead>
         <tr>
             <th>№</th>
             <th>Наименование</th>
-            <th>Действие</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>

@@ -104,6 +104,20 @@ class LabaController extends Controller
         ]);
     }
 
+    public function show_done(Request $request)
+    {
+        $laba = laba::where('id', $request->laba_id)->get()[0];
+        $name = $laba['name'];
+        $description = $laba['description'];
+
+        return view('plank.done', [
+            'id' => $request->laba_id,
+            'task_id' => $request->task_id,
+            'name' => $name,
+            'description' => $description
+        ]);
+    }
+
 
     public function show_v2(Request $request)
     {

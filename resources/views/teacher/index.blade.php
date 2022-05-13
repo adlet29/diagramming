@@ -3,7 +3,7 @@
 @section('content')
     <h2>Мои Студенты</h2>
     <table class="table">
-        <thead>
+        <thead class="thead-dark">
         <tr>
             <th>ФИО</th>
             <th>Курс</th>

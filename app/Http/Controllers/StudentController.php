@@ -21,11 +21,13 @@ class StudentController extends Controller
         $tasks = Task::where('student_id', Auth::user()->id)->get();
         $list = [];
         foreach ($tasks as $k => $task) {
-            $laba = laba::where('id', $task['laba_id'])->get()[0];
-            $list[$k]['task_id'] = $task->id;
-            $list[$k]['laba_id'] = $laba->id;
-            $list[$k]['laba_name'] = $laba->name;
-            $list[$k]['teacher_name'] = User::where('id', $task['teacher_id'])->get()[0]->name;
+            if ($task->status == 'open') {
+                $laba = laba::where('id', $task['laba_id'])->get()[0];
+                $list[$k]['task_id'] = $task->id;
+                $list[$k]['laba_id'] = $laba->id;
+                $list[$k]['laba_name'] = $laba->name;
+                $list[$k]['teacher_name'] = User::where('id', $task['teacher_id'])->get()[0]->name;
+            }
         }
 
         return view('student.index', [

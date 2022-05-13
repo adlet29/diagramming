@@ -40,14 +40,13 @@
                     <a href="{{ url('/teacher/tasks') }}"><span class="fa fa-address-card-o mr-3"></span> Регистрация задание </a>
                 </li>
                 <li>
-                    <a href="#"><span class="fa fa-file mr-3"></span> Отчет </a>
+                    <a href="{{ url('/teacher/report') }}"><span class="fa fa-file mr-3"></span> Отчет </a>
                 </li>
             @else
-
+                <li class="active">
+                    <a href="{{ url('/student') }}"><span class="fa fa-home mr-3"></span> Задачи </a>
+                </li>
             @endif
-            <li class="active">
-                <a href="{{ url('/student') }}"><span class="fa fa-home mr-3"></span> Задачи </a>
-            </li>
             <li>
                 <a href="{{ route('logout') }}"
                    onclick="event.preventDefault();

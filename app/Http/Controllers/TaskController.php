@@ -36,6 +36,7 @@ class TaskController extends Controller
             foreach ($labas as $laba) {
                 if ($task['laba_id'] == $laba['id']) {
                     $tasks[$k]['laba_name'] = $laba['name'];
+
                 }
             }
 
@@ -71,15 +72,64 @@ class TaskController extends Controller
         dd('Error 404');
     }
 
+    public function point(Request $request)
+    {
+        if (!isset($request->point)) {
+            print_r("Выберите баллы!");
+            die();
+        }
+
+        if (isset($request->task_id) && isset($request->point)) {
+            $task = Task::find($request->task_id);
+            $task->point = (int)$request->point;
+            $task->status = 'archive';
+            $task->save();
+            return redirect('teacher/tasks');
+        }
+
+        dd('Error 404');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function report()
     {
-        //
+        # select
+        $labas = laba::where('user_id', Auth::user()->id)->get();
+        $students = User::where('role_id', 2)->get();
+        # end select
+
+        # table
+        $tasks = Task::where('teacher_id', Auth::user()->id)->get();
+
+        $report = [];
+        foreach ($tasks as $k => $task) {
+            if ($task->status == 'archive') {
+                $report[$k]['point'] = $task->point;
+                $report[$k]['student_fio'] = '';
+                foreach ($students as $student) {
+                    if ($task['student_id'] == $student['id']) {
+                        $report[$k]['student_fio'] = $student['name'];
+                    }
+                }
+                $report[$k]['laba_name'] = '';
+                foreach ($labas as $laba) {
+                    if ($task['laba_id'] == $laba['id']) {
+                        $report[$k]['laba_name'] = $laba['name'];
+                    }
+                }
+            }
+
+
+        }
+        # end table
+        return view('teacher.report', [
+            'report' => $report
+        ]);
     }
 
     /**

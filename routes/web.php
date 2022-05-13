@@ -35,9 +35,12 @@ Route::group([
         Route::get('/', [App\Http\Controllers\TeacherController::class, 'index']);
         Route::get('/plank', [App\Http\Controllers\LabaController::class, 'plank']);
         Route::get('/labas', [App\Http\Controllers\LabaController::class, 'index']);
-        Route::get('/labas/{id}', [App\Http\Controllers\LabaController::class, 'show']);
+        Route::get('/labas/{laba_id}', [App\Http\Controllers\LabaController::class, 'show']);
+        Route::get('/task/{task_id}/check/{laba_id}', [App\Http\Controllers\LabaController::class, 'show_done']);
         Route::get('/tasks', [App\Http\Controllers\TaskController::class, 'index']);
         Route::post('/task/create', [App\Http\Controllers\TaskController::class, 'create']);
+        Route::post('/task/point', [App\Http\Controllers\TaskController::class, 'point']);
+        Route::get('/report', [App\Http\Controllers\TaskController::class, 'report']);
     });
 
     Route::group([

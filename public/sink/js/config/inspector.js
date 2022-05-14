@@ -98,8 +98,10 @@ App.config = App.config || {};
         imageIcons: [
             { value: '/sink/assets/image-icon1.svg', content: '<img height="42px" src="/sink/assets/image-icon1.svg"/>' },
             { value: '/sink/assets/image-icon2.svg', content: '<img height="80px" src="/sink/assets/image-icon2.svg"/>' },
-            { value: '/sink/assets/image-icon3.svg', content: '<img height="80px" src="/sink/assets/image-icon3.svg"/>' },
-            { value: '/sink/assets/image-icon4.svg', content: '<img height="80px" src="/sink/assets/image-icon4.svg"/>' }
+            { value: '/sink/assets/image-icon3.svg', content: '<img height="30px" src="/sink/assets/image-icon3.svg"/>' },
+            { value: '/sink/assets/image-icon4.svg', content: '<img height="30px" src="/sink/assets/image-icon4.svg"/>' },
+            { value: '/sink/assets/image-icon5.svg', content: '<img height="80px" src="/sink/assets/image-icon5.svg"/>' },
+            { value: '/sink/assets/image-icon6.svg', content: '<img height="42px" src="/sink/assets/image-icon6.svg"/>' }
         ],
 
         imageGender: [

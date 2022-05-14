@@ -31,10 +31,10 @@
                     <a href="{{ url('/teacher') }}"><span class="fa fa-home mr-3"></span> Мои Студенты </a>
                 </li>
                 <li>
-                    <a href="{{ url('/teacher/plank') }}"><span class="fa fa-support mr-3"></span> Вируальная сцена </a>
+                    <a href="{{ url('/teacher/plank') }}"><span class="fa fa-support mr-3"></span> Виртуальная сцена </a>
                 </li>
                 <li>
-                    <a href="{{ url('/teacher/labas') }}"><span class="fa fa-support mr-3"></span> Мои Лаборатории </a>
+                    <a href="{{ url('/teacher/labas') }}"><span class="fa fa-support mr-3"></span> Мои Лабораторий </a>
                 </li>
                 <li>
                     <a href="{{ url('/teacher/tasks') }}"><span class="fa fa-address-card-o mr-3"></span> Регистрация задание </a>
